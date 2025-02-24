@@ -1,0 +1,29 @@
+services:
+  # django:
+  #   build: 
+  #     context: .
+  #   command: python manage.py runserver 0.0.0.0:8000
+  #   volumes:
+  #     - .:/usr/src/app/
+  #   ports:
+  #     - 8001:8000
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+  # nudenet:
+  #   image: ghcr.io/notai-tech/nudenet:latest
+  #   ports:
+  #     - 8080:8080
+  # celery:
+  #   build: 
+  #     context: .
+  #   command: celery -A threaddit beat -l INFO
+  #   # command: celery -A threaddit worker --pool=solo -l INFO
+  #   volumes:
+  #     - .:/usr/src/app/
+  #   depends_on:
+  #     - redis
+  #   environment:
+  #     - CELERY_BROKER_URL=redis://redis:6379/0
+  #     - CELERY_BACKEND=redis://redis:6379/0
